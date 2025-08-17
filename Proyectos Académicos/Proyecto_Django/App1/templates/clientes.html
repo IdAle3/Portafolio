@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="{% static 'css/clientes.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+
+    {% block content %}
+
+    <section class="contenedor">
+        <div class="info">
+            <h1>Clientes satisfechos</h1>
+            <br>
+            <form action="{% url 'agregarClientes' %}" method="get" style="display: inline;">
+              <button type="submit" class="btn">Agregar nuevo cliente</button>
+            </form>
+            <br><br>
+            <div class="contenedor-clientes">
+                {% for clientes in clientes %}
+                <div class="cliente">
+                    <h2 class="nombre">Nombre: {{ clientes.Nombre }}</h2>
+                    <h2 class="apellidos">Apellidos: {{ clientes.Apellidos }}</h2>
+                    <h2 class="correo">Correo: {{ clientes.Correo }}</h2>
+                    <h2 class="tipo-cliente">Tipo de cliente: {{ clientes.TipoCliente }}</h2>
+                    <br>
+                    <div class="acciones">
+                    <form action="{% url 'editar_cliente' clientes.id %}" method="get" style="display: inline;">
+                        <button type="submit" class="btn">Editar</button>
+                    </form>
+                    <a href="{% url 'eliminarCliente' clientes.id %}" class="btn-eliminar">Eliminar</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </section>
+    {% endblock %}
+</body>
+<style>
+.btn {
+    background-color: #6408a1ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #e4b5ff;
+}
+
+a.btn-eliminar {
+    display: inline-block;
+    background-color: #c62828; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-eliminar:hover {
+    background-color: #f57270ff;
+}
+
+</style>
+
+</html>
