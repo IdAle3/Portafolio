@@ -7,7 +7,7 @@
 
 - [📂 Kaggle](./Certificaciones/Kaggle/)  
 - [📄 IBM PY0101EN Certificate (Cognitive Class)](https://github.com/IdAle3/Portafolio/blob/main/Certificaciones/IBM%20PY0101EN%20Certificate%20_%20Cognitive%20Class.pdf)  
-- [📄 Reconocimiento](https://github.com/IdAle3/Portafolio/blob/main/Certificaciones/reconocimiento-.pdf)  
+- [📄 Reconocimiento](https://github.com/IdAle3/Portafolio/blob/main/Certificaciones/reconocimiento-curso%20python.pdf)  
 
 ---
 
